@@ -48,6 +48,15 @@
     </dependencies>
 
     <build>
+<!--        因为编译后在java目录下的非java类型文件不会被加载，所以需要以下配置-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
